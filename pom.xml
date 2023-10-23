@@ -8,14 +8,21 @@
 		<version>3.1.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.cyk</groupId>
 	<artifactId>springboot3-integrated</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot3-integrated</name>
+    <packaging>pom</packaging>
+
+    <name>springboot3-integrated</name>
 	<description>Summarize the knowledge points used in daily development of springboot3.X test git commit</description>
-	<properties>
+    <modules>
+        <module>helloworld</module>
+    </modules>
+    <properties>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
