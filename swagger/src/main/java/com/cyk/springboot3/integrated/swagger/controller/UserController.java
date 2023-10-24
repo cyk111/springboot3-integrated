@@ -7,9 +7,11 @@ import com.cyk.springboot3.integrated.swagger.entity.User;
 import com.cyk.springboot3.integrated.swagger.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -70,12 +72,15 @@ public class UserController {
 
 
 
+    @Validated
     @Operation(summary = "通过id查询-RequestParam参数类型")
     @RequestMapping(path = "/getById",method = RequestMethod.GET)
-    public User getUserInfoParam(@RequestParam("id") Long id){
+    public User getUserInfoParam(@NotNull @RequestParam("id") Long id){
         User user = userService.getUserInfo(id);
         return user;
     }
+
+
     @Operation(summary = "通过name查询-返回vo")
     @RequestMapping(path = "/getByUserName",method = RequestMethod.GET)
     public UserVO getUserByName(@RequestParam("userName") String userName){

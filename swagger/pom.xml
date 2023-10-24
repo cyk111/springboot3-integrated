@@ -38,6 +38,19 @@
             <optional>true</optional> <!-- 可以防止将devtools依赖传递到其他模块中 -->
         </dependency>
 
+        <!-- 统一参数校验 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.10</version>
+        </dependency>
+
+
 
     </dependencies>
 

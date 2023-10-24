@@ -1,5 +1,7 @@
 package com.cyk.springboot3.integrated.swagger.controller.param;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 /**
@@ -9,6 +11,9 @@ import lombok.Data;
 @Data
 public class UserParam {
 
+    @NotBlank(message = "用户名不能为空")
     private String userName;
+
+    @NotNull(message = "age 不能为空")
     private Integer age;
 }
