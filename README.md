@@ -12,6 +12,13 @@
         </dependency>
 ```
 ### 2 springboot 项目支持热部署 并配置相应信息
+- 项目分层
+- 不同参数请求 post get
+- // 数据校验
+- 统一返回结构体封装
+- //支持热部署
+- //swagger2 封装
+- 
 ```xml
        <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -19,6 +26,36 @@
             <optional>true</optional> <!-- 可以防止将devtools依赖传递到其他模块中 -->
         </dependency>
 ```
+
+### 4. 项目分层、统一接口封装、参数校验、异常处理、多版本接口提供
+### 5. springboot 集成swagger、集成 smartDoc
+### 6. springboot 访问外部接口的几种方式
+### 7. springboot 如何保障接口幂等性
+### 8. springboot 实现接口限流(单实例、分布式)
+### 9. springboot 集成mysql 基于JPA的封装 (oracle PostgreSQL)
+### 10. springboot 集成mysql mybatis(xml、注解方式)
+### 11. springboot 集成mysql 分页插件 pageHelper
+### 12. springboot 集成mysql 多数据源配置
+### 13. springboot 集成mysql - mybatis-plus 代码自动生成、基于字段隔离多租户
+### 14. springboot 集成shardJDBC
+### 15. springboot 集成数据库连接池 DBCP、C3P0、HikariCP (对比不同数据库连接池的区别)
+### 16. springboot 集成数据库脚本管理工具 flyway liquibase
+### 17. springboot 集成redis(jedis三种连接方式(单机、分片、集群)) / RedisTemplate、Jedis、lettuce、Redission 区分
+### 18. springboot 集成分布式锁
+### 19. springboot 集成 MongoDB
+### 20. springboot 集成ES、kafka、rocketMQ
+### 21. springboot 集成websocket  netty
+### 22. springboot 集成Schedule ExecutorService
+### 23. springboot 集成定时任务  quart、quartz cluster、elastic-job、xxl-job
+### 24. springboot 集成文件上传下载、断点续传
+### 25. springboot 集成文件 POI、EasyPOI 导入导出 Excel world
+### 26. springboot 集成导出PDF
+### 27. springboot 异步编程 @Async  Reactive
+### 28. springboot 应用部署(jar、war  tomcat(jetty,undertow)) 、docker、 docker compose 
+### 29. springboot 集成监控 actuator、springboot admin、Prometheus + grafana 
+
+
+
 ### 3 springboot 配置日志
 - 比较日志不同 log4j  log4j2 logback
   - 介绍配置日志需要考虑的事项
@@ -186,30 +223,3 @@
         
         </configuration>
     ```
-
-### 4. 项目分层、统一接口封装、参数校验、异常处理、多版本接口提供
-### 5. springboot 集成swagger、集成 smartDoc
-### 6. springboot 访问外部接口的几种方式
-### 7. springboot 如何保障接口幂等性
-### 8. springboot 实现接口限流(单实例、分布式)
-### 9. springboot 集成mysql 基于JPA的封装 (oracle PostgreSQL)
-### 10. springboot 集成mysql mybatis(xml、注解方式)
-### 11. springboot 集成mysql 分页插件 pageHelper
-### 12. springboot 集成mysql 多数据源配置
-### 13. springboot 集成mysql - mybatis-plus 代码自动生成、基于字段隔离多租户
-### 14. springboot 集成shardJDBC
-### 15. springboot 集成数据库连接池 DBCP、C3P0、HikariCP (对比不同数据库连接池的区别)
-### 16. springboot 集成数据库脚本管理工具 flyway liquibase
-### 17. springboot 集成redis(jedis三种连接方式(单机、分片、集群)) / RedisTemplate、Jedis、lettuce、Redission 区分
-### 18. springboot 集成分布式锁
-### 19. springboot 集成 MongoDB
-### 20. springboot 集成ES、kafka、rocketMQ
-### 21. springboot 集成websocket  netty
-### 22. springboot 集成Schedule ExecutorService
-### 23. springboot 集成定时任务  quart、quartz cluster、elastic-job、xxl-job
-### 24. springboot 集成文件上传下载、断点续传
-### 25. springboot 集成文件 POI、EasyPOI 导入导出 Excel world
-### 26. springboot 集成导出PDF
-### 27. springboot 异步编程 @Async  Reactive
-### 28. springboot 应用部署(jar、war  tomcat(jetty,undertow)) 、docker、 docker compose 
-### 29. springboot 集成监控 actuator、springboot admin、Prometheus + grafana 
