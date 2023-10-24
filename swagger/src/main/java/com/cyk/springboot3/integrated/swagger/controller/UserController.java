@@ -5,8 +5,9 @@ import com.cyk.springboot3.integrated.swagger.controller.param.UserParam;
 import com.cyk.springboot3.integrated.swagger.controller.vo.UserVO;
 import com.cyk.springboot3.integrated.swagger.entity.User;
 import com.cyk.springboot3.integrated.swagger.service.UserService;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.*;
  * @date 2023/10/24 07:48
  */
 @RestController
-@RequestMapping(path = "/user")
+@RequestMapping(path = "/user",name = "用户管理")
+@Tag(name = "用户管理")
+@Slf4j
 public class UserController {
 
 
@@ -37,15 +40,27 @@ public class UserController {
      *  里面的参数
      */
 
-    @ApiOperation("查询用户")
-    @ApiImplicitParam(name = "id", type = "string", required = true)
+    /**
+     * idea 设置
+     * 自动导包 删除包
+     * Settings→Editor→General→Auto Import
+     * 然后勾选Add unambiguous imports on the fly以及Optimize imports on the fly
+     *
+     * 设置创建项目 使用制定maven
+     *
+     * 设置使用默认jdk
+     *
+     */
+
+
+    @Operation(summary = "通过id查询")
     @RequestMapping(path = "/getById/{id}",method = RequestMethod.GET)
     public User getUserInfo(@PathVariable("id") Long id){
         User user = userService.getUserInfo(id);
         return user;
     }
 
-
+    @Operation(summary = "通过id查询-返回结构体")
     @RequestMapping(path = "/getUserInfoResult/{id}",method = RequestMethod.GET)
     public Result<User> getUserInfoResult(@PathVariable("id") Long id){
         User user = userService.getUserInfo(id);
@@ -54,12 +69,13 @@ public class UserController {
 
 
 
+    @Operation(summary = "通过id查询-RequestParam参数类型")
     @RequestMapping(path = "/getById",method = RequestMethod.GET)
     public User getUserInfoParam(@RequestParam("id") Long id){
         User user = userService.getUserInfo(id);
         return user;
     }
-
+    @Operation(summary = "通过name查询-返回vo")
     @RequestMapping(path = "/getByUserName",method = RequestMethod.GET)
     public UserVO getUserByName(@RequestParam("userName") String userName){
         User user = userService.getUserByName(userName);
@@ -67,7 +83,7 @@ public class UserController {
         BeanUtils.copyProperties(user,userVO);
         return userVO;
     }
-
+    @Operation(summary = "通过name查询-返回vo-多参数")
     @RequestMapping(path = "/getByUserName1",method = RequestMethod.GET)
     public UserVO getUserByName(@RequestParam("userName") String userName,@RequestParam("age") Integer age){
         UserVO userVO = new UserVO();
@@ -78,6 +94,7 @@ public class UserController {
         return userVO;
     }
 
+    @Operation(summary = "通过name查询-JSON参数")
     @RequestMapping(path = "/getByNameAndAge",method = RequestMethod.POST)
     public UserVO getByNameAndAge(@RequestBody UserParam userName){
         User user = userService.getUserByNameAndAge(userName);
