@@ -17,7 +17,7 @@
 - 统一返回结构体封装
 
 ### 3 springboot 项目支持热部署 数据校验 封装swagger 
-- 
+- 项目分层、统一接口封装、参数校验、异常处理- 
 ```xml
        <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -25,9 +25,9 @@
             <optional>true</optional> <!-- 可以防止将devtools依赖传递到其他模块中 -->
         </dependency>
 ```
-
-### 4. 项目分层、统一接口封装、参数校验、异常处理、多版本接口提供
+### 4. 多版本接口提供,多环境切换(todo)
 ### 5. springboot 集成swagger、集成 smartDoc
+
 ### 6. springboot 访问外部接口的几种方式
 ### 7. springboot 如何保障接口幂等性
 ### 8. springboot 实现接口限流(单实例、分布式)
