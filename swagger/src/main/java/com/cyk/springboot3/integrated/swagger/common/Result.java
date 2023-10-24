@@ -1,4 +1,4 @@
-package com.cyk.springboot3.integrated.helloworld.common;
+package com.cyk.springboot3.integrated.swagger.common;
 
 import java.io.Serializable;
 

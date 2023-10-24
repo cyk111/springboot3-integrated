@@ -1,4 +1,4 @@
-package com.cyk.springboot3.integrated.helloworld.controller.param;
+package com.cyk.springboot3.integrated.swagger.controller.param;
 
 /**
  * @author cyk

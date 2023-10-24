@@ -1,27 +1,16 @@
-package com.cyk.springboot3.integrated.helloworld.entity;
+package com.cyk.springboot3.integrated.swagger.controller.vo;
 
 /**
  * @author cyk
- * @date 2023/10/24 07:50
+ * @date 2023/10/24 08:05
  */
-public class User {
+public class UserVO {
 
-    private Long id;
     private String name;
     private String address;
     private Integer age;
     private String gender;
     private String email;
-    private String phone;
-    private String password;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -61,21 +50,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

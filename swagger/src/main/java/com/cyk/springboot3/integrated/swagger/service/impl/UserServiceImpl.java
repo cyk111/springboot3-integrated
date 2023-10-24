@@ -1,9 +1,9 @@
-package com.cyk.springboot3.integrated.helloworld.service.impl;
+package com.cyk.springboot3.integrated.swagger.service.impl;
 
-import com.cyk.springboot3.integrated.helloworld.common.GenderEnums;
-import com.cyk.springboot3.integrated.helloworld.controller.param.UserParam;
-import com.cyk.springboot3.integrated.helloworld.entity.User;
-import com.cyk.springboot3.integrated.helloworld.service.UserService;
+import com.cyk.springboot3.integrated.swagger.common.GenderEnums;
+import com.cyk.springboot3.integrated.swagger.controller.param.UserParam;
+import com.cyk.springboot3.integrated.swagger.entity.User;
+import com.cyk.springboot3.integrated.swagger.service.UserService;
 import org.springframework.stereotype.Service;
 
 /**

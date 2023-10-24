@@ -1,10 +1,10 @@
-package com.cyk.springboot3.integrated.helloworld.controller;
+package com.cyk.springboot3.integrated.swagger.controller;
 
-import com.cyk.springboot3.integrated.helloworld.common.Result;
-import com.cyk.springboot3.integrated.helloworld.controller.param.UserParam;
-import com.cyk.springboot3.integrated.helloworld.controller.vo.UserVO;
-import com.cyk.springboot3.integrated.helloworld.entity.User;
-import com.cyk.springboot3.integrated.helloworld.service.UserService;
+import com.cyk.springboot3.integrated.swagger.common.Result;
+import com.cyk.springboot3.integrated.swagger.controller.param.UserParam;
+import com.cyk.springboot3.integrated.swagger.controller.vo.UserVO;
+import com.cyk.springboot3.integrated.swagger.entity.User;
+import com.cyk.springboot3.integrated.swagger.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;

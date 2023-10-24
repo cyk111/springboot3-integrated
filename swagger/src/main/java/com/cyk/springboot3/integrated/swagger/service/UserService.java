@@ -1,7 +1,7 @@
-package com.cyk.springboot3.integrated.helloworld.service;
+package com.cyk.springboot3.integrated.swagger.service;
 
-import com.cyk.springboot3.integrated.helloworld.controller.param.UserParam;
-import com.cyk.springboot3.integrated.helloworld.entity.User;
+import com.cyk.springboot3.integrated.swagger.controller.param.UserParam;
+import com.cyk.springboot3.integrated.swagger.entity.User;
 
 /**
  * @author cyk
