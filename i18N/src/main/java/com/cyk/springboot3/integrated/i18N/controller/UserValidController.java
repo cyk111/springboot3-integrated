@@ -1,52 +1,32 @@
 package com.cyk.springboot3.integrated.i18N.controller;
 
-import com.cyk.springboot3.integrated.i18N.common.Code;
-import com.cyk.springboot3.integrated.i18N.common.Result;
-import com.cyk.springboot3.integrated.i18N.controller.param.UserValidParam;
-import jakarta.validation.Valid;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Locale;
 
 /**
  * @author cyk
  * @date 2023/10/24 14:51
  */
 @RestController
-@RequestMapping(path = "userValid",name = "校验参数信息")
-@Validated
+@RequestMapping(path = "/userValid",name = "校验参数信息")
 public class UserValidController {
 
+    private final MessageSource messageSource;
 
-    /**
-     * 没有参数校验
-     * @param userValidParam
-     * @return
-     */
-    @RequestMapping(path = "/addUserUnValid",method = RequestMethod.POST,name = "添加用户")
-    public Result<String> addUserUnValid(@Valid @RequestBody UserValidParam userValidParam) {
-        if(userValidParam.getName()==null) {
-            return Result.failure(Code.SYSTEM_ERROR,"user name should not be empty");
-        } else if(userValidParam.getName().length()<5 || userValidParam.getName().length()>50){
-            return Result.failure(Code.SYSTEM_ERROR,"user name length should between 5-50");
-        }
-        if(userValidParam.getAge()< 1 || userValidParam.getAge()> 150) {
-            return Result.failure(Code.SYSTEM_ERROR,"invalid age");
-        }
-        return Result.success("success");
+    public UserValidController(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 
-    /**
-     *
-     */
-
-    @RequestMapping(path = "/addUserValid",method = RequestMethod.POST,name = "添加用户-校验")
-    public Result<String> addUserValid(@Valid @RequestBody UserValidParam userValidParam) {
-        // 业务逻辑处理
-        String msg = "ok";
-        return Result.success(msg);
+    @RequestMapping(path = "/message",method = RequestMethod.GET)
+    public  String addUserValid() {
+        Locale locale = LocaleContextHolder.getLocale();
+        String userName = messageSource.getMessage("user.name", null, locale);
+        return userName;
     }
 
 

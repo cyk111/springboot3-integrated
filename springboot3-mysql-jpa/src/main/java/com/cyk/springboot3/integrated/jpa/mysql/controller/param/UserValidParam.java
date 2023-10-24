@@ -1,7 +1,10 @@
-package com.cyk.springboot3.integrated.i18N.controller.param;
+package com.cyk.springboot3.integrated.jpa.mysql.controller.param;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 /**
@@ -13,7 +16,7 @@ public class UserValidParam {
 
     private static final long serialVersionUID = 1L;
 
-    @NotBlank(message = "userId could not be empty")
+    @NotEmpty(message = "could not be empty")
     private String userId;
 
     @NotEmpty(message = "could not be empty")
