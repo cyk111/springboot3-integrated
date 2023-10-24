@@ -19,6 +19,7 @@
     <modules>
         <module>helloworld</module>
 		<module>helloworld-mvc</module>
+		<module>helloworld-mvc-test</module>
 	</modules>
     <properties>
 		<java.version>17</java.version>
