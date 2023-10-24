@@ -16,8 +16,8 @@ public class TestHotDeployController {
     @Operation(summary = "测试热部署")
     @RequestMapping(path = "hotDeploy",method = RequestMethod.GET)
     public String getInfo(){
-        System.out.println("========test info333");
-        return "this is a test333 ..";
+        System.out.println("========test info444");
+        return "this is a test444 ..";
     }
 
     /**
