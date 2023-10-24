@@ -42,14 +42,15 @@ public class UserController {
 
     /**
      * idea 设置
-     * 自动导包 删除包
+     * 1. 自动导包 删除包
      * Settings→Editor→General→Auto Import
      * 然后勾选Add unambiguous imports on the fly以及Optimize imports on the fly
      *
-     * 设置创建项目 使用制定maven
+     * 2.设置创建项目 使用制定maven
      *
-     * 设置使用默认jdk
+     * 3. 设置使用默认jdk
      *
+     * 4.设置设部署
      */
 
 

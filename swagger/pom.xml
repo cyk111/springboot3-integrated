@@ -31,6 +31,13 @@
             <version>2.0.2</version>
         </dependency>
 
+        <!-- 支持热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional> <!-- 可以防止将devtools依赖传递到其他模块中 -->
+        </dependency>
+
 
     </dependencies>
 

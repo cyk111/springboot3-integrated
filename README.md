@@ -11,13 +11,12 @@
             <scope>compile</scope>
         </dependency>
 ```
-### 2 springboot 项目支持热部署 并配置相应信息
+### 2 springboot 项目分层 并配置相应信息
 - 项目分层
 - 不同参数请求 post get
-- // 数据校验
 - 统一返回结构体封装
-- //支持热部署
-- //swagger2 封装
+
+### 3 springboot 项目支持热部署 数据校验 封装swagger 
 - 
 ```xml
        <dependency>
