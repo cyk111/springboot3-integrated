@@ -22,8 +22,8 @@ public class User implements BaseEntity{
     @Column(name = "nick_name")
     private String nickName;
 
-    @Column(name = "moblie")
-    private String moblie;
+    @Column(name = "mobile")
+    private String mobile;
 
     @Column(name = "password")
     private String password;
@@ -34,7 +34,7 @@ public class User implements BaseEntity{
     @Column(name = "user_head_path")
     private String userHeadPath;
 
-    private Long addTimes;
+    private Long addTime;
 
     private String ipAddress;
 

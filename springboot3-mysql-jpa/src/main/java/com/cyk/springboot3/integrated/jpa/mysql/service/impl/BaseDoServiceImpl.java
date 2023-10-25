@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,111 +26,113 @@ public abstract class BaseDoServiceImpl <T extends BaseEntity, I extends Seriali
 
     @Override
     public T find(I id) {
-        return null;
+        return getBaseDao().findById(id).orElse(null);
     }
 
     @Override
     public List<T> findAll() {
-        return null;
+        return getBaseDao().findAll();
     }
 
     @Override
     public List<T> findList(I[] ids) {
-        return null;
+        List<I> idList = Arrays.asList(ids);
+        return getBaseDao().findAllById(idList);
     }
 
     @Override
     public List<T> findList(Iterable<I> ids) {
-        return null;
+        return getBaseDao().findAllById(ids);
     }
 
     @Override
     public Page<T> findAll(Pageable pageable) {
-        return null;
+        return getBaseDao().findAll(pageable);
     }
 
     @Override
     public Page<T> findAll(Specification<T> spec, Pageable pageable) {
-        return null;
+        return getBaseDao().findAll(spec, pageable);
     }
 
     @Override
     public T findOne(Specification<T> spec) {
-        return null;
+        return getBaseDao().findOne(spec).orElse(null);
     }
 
     @Override
     public long count() {
-        return 0;
+        return getBaseDao().count();
     }
 
     @Override
     public long count(Specification<T> spec) {
-        return 0;
+        return getBaseDao().count(spec);
     }
 
     @Override
     public boolean exists(I id) {
-        return false;
+        return getBaseDao().findById(id).isPresent();
     }
 
     @Override
     public void save(T entity) {
-
+        getBaseDao().save(entity);
     }
 
     @Override
     public void save(List<T> entities) {
-
+        getBaseDao().saveAll(entities);
     }
 
     @Override
     public T update(T entity) {
-        return null;
+        return getBaseDao().saveAndFlush(entity);
     }
 
     @Override
     public void delete(I id) {
-
+        getBaseDao().deleteById(id);
     }
 
     @Override
     public void deleteByIds(List<I> ids) {
-
+        getBaseDao().deleteAllById(ids);
     }
 
     @Override
     public void delete(T[] entities) {
-
+        List<T> tList = Arrays.asList(entities);
+        getBaseDao().deleteAll(tList);
     }
 
     @Override
     public void delete(Iterable<T> entities) {
-
+        getBaseDao().deleteAll(entities);
     }
 
     @Override
     public void delete(T entity) {
-
+        getBaseDao().delete(entity);
     }
 
     @Override
     public void deleteAll() {
-
+        getBaseDao().deleteAll();
     }
 
     @Override
     public List<T> findList(Specification<T> spec) {
-        return null;
+        return getBaseDao().findAll(spec);
     }
 
     @Override
     public List<T> findList(Specification<T> spec, Sort sort) {
-        return null;
+        return getBaseDao().findAll(spec, sort);
     }
 
     @Override
     public void flush() {
-
+        getBaseDao().flush();
     }
 }

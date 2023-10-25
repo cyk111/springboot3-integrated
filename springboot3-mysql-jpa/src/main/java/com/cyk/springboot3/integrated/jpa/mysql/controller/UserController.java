@@ -33,10 +33,8 @@ public class UserController {
     @RequestMapping(path = "/add",method = RequestMethod.POST)
     public Result<User> add(@RequestBody User user) {
         if (user.getUserId()==null || !userService.exists(user.getUserId())) {
-            user.setUserId(1L);
             userService.save(user);
         } else {
-            user.setRealName("ddafdafa");
             userService.update(user);
         }
         return Result.success(userService.find(user.getUserId()));
@@ -55,7 +53,7 @@ public class UserController {
     @Operation(summary = "page")
     @RequestMapping(path = "/page",method = RequestMethod.GET)
     public Result<Page<User>> page(@RequestParam int pageSize, @RequestParam int pageNumber) {
-        return Result.success(userService.findPage(UserQueryBean.builder().build(), PageRequest.of(pageNumber, pageSize)));
+         return Result.success(userService.findPage(UserQueryBean.builder().build(), PageRequest.of(pageNumber, pageSize)));
     }
 
 

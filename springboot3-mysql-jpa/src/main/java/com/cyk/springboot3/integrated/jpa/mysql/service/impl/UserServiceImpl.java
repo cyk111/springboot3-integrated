@@ -5,12 +5,17 @@ import com.cyk.springboot3.integrated.jpa.mysql.entity.query.UserQueryBean;
 import com.cyk.springboot3.integrated.jpa.mysql.jpa.dao.IBaseDao;
 import com.cyk.springboot3.integrated.jpa.mysql.jpa.dao.IUserDao;
 import com.cyk.springboot3.integrated.jpa.mysql.service.IUserService;
-import com.github.wenhao.jpa.Specifications;
-import org.apache.commons.lang3.StringUtils;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author cyk
@@ -27,10 +32,10 @@ public class UserServiceImpl extends BaseDoServiceImpl<User, Long> implements IU
     /**
      * init.
      *
-     * @param userDao
+     * @param userDao2
      */
-    public UserServiceImpl(final IUserDao userDao) {
-        this.userDao = userDao;
+    public UserServiceImpl(final IUserDao userDao2) {
+        this.userDao = userDao2;
     }
 
     /**
@@ -50,11 +55,26 @@ public class UserServiceImpl extends BaseDoServiceImpl<User, Long> implements IU
      */
     @Override
     public Page<User> findPage(UserQueryBean queryBean, PageRequest pageRequest) {
-        Specification<User> specification = Specifications.<User>and()
-                .like(StringUtils.isNotEmpty(queryBean.getName()), "user_name", queryBean.getName())
-                .like(StringUtils.isNotEmpty(queryBean.getDescription()), "description",
-                        queryBean.getDescription())
-                .build();
+        Specification<User> specification = new Specification<User>(){
+            @Override
+            public Specification<User> and(Specification<User> other) {
+                return Specification.super.and(other);
+            }
+
+            @Override
+            public Specification<User> or(Specification<User> other) {
+                return Specification.super.or(other);
+            }
+
+            @Override
+            public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                List<Predicate> predicates = new LinkedList<>();
+                //predicates.add(cb.equal(root.get("nickName"), queryBean.getName()));
+                //predicates.add(cb.equal(root.get("age"), queryBean.getDescription()));
+                return query.where(predicates.toArray(new Predicate[0])).getRestriction();
+            }
+        };
+
         return this.getBaseDao().findAll(specification, pageRequest);
     }
 
