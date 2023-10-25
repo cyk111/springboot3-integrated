@@ -32,6 +32,24 @@
 ### 7. springboot 如何保障接口幂等性
 ### 8. springboot 实现接口限流(单实例、分布式)
 ### 9. springboot 集成mysql 基于JPA的封装 (oracle PostgreSQL)
+- docker 初始化mysql 命令
+```text
+   docker run -itd --name springboot3_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+```
+- 创建数据库 + 创建表执行脚本
+```sql
+    create database springboot3_test;
+```
+----
+- docker 初始化postgres 命令
+```text
+  docker run --name springboot3_postgres -p 5432:5432 -e POSTGRES_PASSWORD=123456 postgres
+```
+- 创建数据库 + 创建表 执行脚本
+```sql
+    create database springboot3_test;
+```
+
 ### 10. springboot 集成mysql mybatis(xml、注解方式)
 ### 11. springboot 集成mysql 分页插件 pageHelper
 ### 12. springboot 集成mysql 多数据源配置
