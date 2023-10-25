@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyk.springboot3.integrated.mysql.mybatis.xml.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.cyk.springboot3.integrated.mysql.mybatis.xml.entity.User">
+        <id column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="secure_key" jdbcType="VARCHAR" property="secureKey" />
+        <result column="user_head_path" jdbcType="VARCHAR" property="userHeadPath" />
+        <result column="add_time" jdbcType="BIGINT" property="addTime" />
+        <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+        <result column="authentication" jdbcType="VARCHAR" property="authentication" />
+        <result column="login_source" jdbcType="TINYINT" property="loginSource" />
+        <result column="real_Name" jdbcType="VARCHAR" property="realName" />
+        <result column="sex" jdbcType="TINYINT" property="sex" />
+        <result column="birthday" jdbcType="BIGINT" property="birthday" />
+        <result column="is_del" jdbcType="TINYINT" property="isDel" />
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+         user_id,nick_name, mobile, password, secure_key, user_head_path,
+         add_time, last_login_time, login_time, ip_address, authentication,
+         login_source, real_name, sex, birthday, is_del
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        where user_id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from t_user
+        where user_id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        <include refid="Base_Column_List" />
+        from t_user
+    </select>
+
+    <select id="queryByPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        where 1 = 1
+        <if test="userPageDTO.loginName != null and userPageDTO.loginName != '' ">
+            AND login_name = #{userPageDTO.loginName,jdbcType=VARCHAR}
+        </if>
+        <if test="userPageDTO.email != null and userPageDTO.email != '' ">
+            AND email = #{userPageDTO.email,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>
