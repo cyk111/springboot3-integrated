@@ -24,6 +24,7 @@
 		<module>springboot3-mysql-jpa</module>
 		<module>springboot3-postgresql-jpa</module>
 		<module>springboot3-mysql-mybatis-xml</module>
+		<module>springboot3-mutil-datasources</module>
 
 	</modules>
     <properties>

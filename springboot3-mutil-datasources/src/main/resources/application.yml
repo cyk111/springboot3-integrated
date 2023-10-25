@@ -1,0 +1,65 @@
+server:
+  port: 8080
+# 配置swagger文档的访问路径，访问地址：http://127.0.0.1:8080/swagger-ui.html
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      #exclude: WEB-INF/**
+  datasource:
+    user:
+      url: jdbc:mysql://localhost:3306/springboot3_test?useSSL=false&autoReconnect=true&characterEncoding=utf8
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      initial-size: 20
+      max-idle: 60
+      max-wait: 10000
+      min-idle: 10
+      max-active: 200
+    book:
+      url: jdbc:mysql://localhost:3306/springboot3_test2?useSSL=false&autoReconnect=true&characterEncoding=utf8
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      initial-size: 20
+      max-idle: 60
+      max-wait: 10000
+      min-idle: 10
+      max-active: 200
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.cyk.springboot3.mutil.datasources.entity
+  configuration:
+    cache-enabled: true
+    use-generated-keys: true
+    default-executor-type: REUSE
+    use-actual-param-name: true
+
+# 日志相关
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        jdbc:
+          core: debug
+
+
+###显示SQL语句部分
+# logging.level.com.cyk.springboot3.integrated.mysql.mybatis.xml.mapper: debug
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+debug: false
+

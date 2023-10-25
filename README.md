@@ -54,8 +54,30 @@
 ### 11. springboot 集成mysql 分页插件 pageHelper
 - mybatis + xml + 自动生成代码 + 分页插件(done)
 - [MyBatis Generator 配置详情参考](https://ost.51cto.com/posts/11866)
+- 生成代码命令
+```text
+mvn mybatis-generator:generate -X -e
+```
 
 ### 12. springboot 集成mysql 多数据源配置
+- 创建数据库+ 表+ 添加表数据
+```sql
+create database springboot3_test2
+create table Book(
+    id          int auto_increment primary key,
+    author      varchar(64)  not null comment '作者信息',
+    name        varchar(64)  not null comment '书籍名称',
+    price       decimal      not null comment '价格',
+    createTime  datetime     null comment '上架时间',
+    description varchar(128) null comment '书籍描述'
+);
+
+INSERT INTO Book (id, author, name, price, createTime, description) VALUES (1, '金庸', '笑傲江湖', 13, '2020-12-19 15:26:51', '武侠小说');
+
+INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '罗贯中', '三国演义', 14, '2020-12-19 15:28:36', '历史小说');
+```
+
+
 ### 13. springboot 集成mysql - mybatis-plus 代码自动生成、基于字段隔离多租户
 ### 14. springboot 集成shardJDBC
 ### 15. springboot 集成数据库连接池 DBCP、C3P0、HikariCP (对比不同数据库连接池的区别)
