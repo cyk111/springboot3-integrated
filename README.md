@@ -48,14 +48,13 @@
 - 创建数据库 + 创建表 执行脚本
 ```sql
     create database springboot3_test;
-    CREATE SEQUENCE tb_user_seq;
-    ALTER SEQUENCE tb_user_seq OWNED BY tb_user.id;
 ```
 
 ### 10. springboot 集成mysql mybatis(xml、注解方式)
 ### 11. springboot 集成mysql 分页插件 pageHelper
-- mybatis + xml + 自动生成代码 + 分页插件
-- 
+- mybatis + xml + 自动生成代码 + 分页插件(done)
+- [MyBatis Generator 配置详情参考](https://ost.51cto.com/posts/11866)
+
 ### 12. springboot 集成mysql 多数据源配置
 ### 13. springboot 集成mysql - mybatis-plus 代码自动生成、基于字段隔离多租户
 ### 14. springboot 集成shardJDBC
