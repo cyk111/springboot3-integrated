@@ -22,6 +22,7 @@
 		<module>swagger</module>
 		<module>i18N</module>
 		<module>springboot3-mysql-jpa</module>
+		<module>springboot3-postgresql-jpa</module>
 	</modules>
     <properties>
 		<java.version>17</java.version>

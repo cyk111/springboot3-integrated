@@ -48,6 +48,8 @@
 - 创建数据库 + 创建表 执行脚本
 ```sql
     create database springboot3_test;
+    CREATE SEQUENCE tb_user_seq;
+    ALTER SEQUENCE tb_user_seq OWNED BY tb_user.id;
 ```
 
 ### 10. springboot 集成mysql mybatis(xml、注解方式)
