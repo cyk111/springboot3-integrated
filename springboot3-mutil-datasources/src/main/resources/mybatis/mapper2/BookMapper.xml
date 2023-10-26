@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cyk.springboot3.mutil.datasources.mapper.book.BookMapper">
+<mapper namespace="com.cyk.springboot3.mutil.datasources.mapper2.BookMapper">
   <resultMap id="BaseResultMap" type="com.cyk.springboot3.mutil.datasources.entity.Book">
     <!--
       WARNING - @mbg.generated
@@ -135,4 +135,9 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select *  from Book
+  </select>
 </mapper>

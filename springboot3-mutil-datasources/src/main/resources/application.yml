@@ -12,8 +12,8 @@ spring:
       additional-paths: src/main/java #重启目录
       #exclude: WEB-INF/**
   datasource:
-    user:
-      url: jdbc:mysql://localhost:3306/springboot3_test?useSSL=false&autoReconnect=true&characterEncoding=utf8
+    master:
+      jdbc-url: jdbc:mysql://localhost:3306/springboot3_test?useSSL=false&autoReconnect=true&characterEncoding=utf8
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: 123456
@@ -22,8 +22,8 @@ spring:
       max-wait: 10000
       min-idle: 10
       max-active: 200
-    book:
-      url: jdbc:mysql://localhost:3306/springboot3_test2?useSSL=false&autoReconnect=true&characterEncoding=utf8
+    slave:
+      jdbc-url: jdbc:mysql://localhost:3306/springboot3_test2?useSSL=false&autoReconnect=true&characterEncoding=utf8
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: 123456
@@ -34,7 +34,7 @@ spring:
       max-active: 200
 
 mybatis:
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:mybatis/mapper1/*.xml
   type-aliases-package: com.cyk.springboot3.mutil.datasources.entity
   configuration:
     cache-enabled: true

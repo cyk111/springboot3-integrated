@@ -46,7 +46,7 @@ public class UserController {
 
     @Operation(description = "查询所用用户")
     @RequestMapping(path = "/selectAll",method = RequestMethod.GET)
-    public Result<List<User>> selectAll(@RequestBody User user){
+    public Result<List<User>> selectAll(){
         return Result.success(userService.selectAll());
     }
 

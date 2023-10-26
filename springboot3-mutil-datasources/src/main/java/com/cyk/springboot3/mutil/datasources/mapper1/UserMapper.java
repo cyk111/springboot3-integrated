@@ -1,4 +1,4 @@
-package com.cyk.springboot3.mutil.datasources.mapper.user;
+package com.cyk.springboot3.mutil.datasources.mapper1;
 
 import com.cyk.springboot3.integrated.mysql.mybatis.xml.service.dto.UserPageDTO;
 import com.cyk.springboot3.mutil.datasources.entity.User;

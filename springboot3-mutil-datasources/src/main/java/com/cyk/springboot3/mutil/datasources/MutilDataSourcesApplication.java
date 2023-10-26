@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2023/10/24 07:42
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.cyk.springboot3.mutil.datasources.mapper"})
+@MapperScan(basePackages = {"com.cyk.springboot3.mutil.datasources.mapper1","com.cyk.springboot3.mutil.datasources.mapper2"})
 public class MutilDataSourcesApplication {
     public static void main(String[] args) {
         SpringApplication.run(MutilDataSourcesApplication.class,args);

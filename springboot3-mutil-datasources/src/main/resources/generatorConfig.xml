@@ -30,7 +30,7 @@
             targetProject="./src/main/java" />
         <sqlMapGenerator targetPackage="mybatis.mapper"
             targetProject="./src/main/resources" />
-        <javaClientGenerator targetPackage="com.cyk.springboot3.mutil.datasources.mapper.book"
+        <javaClientGenerator targetPackage="com.cyk.springboot3.mutil.datasources.mapper1.book"
             targetProject="./src/main/java" type="XMLMAPPER" />
 
 

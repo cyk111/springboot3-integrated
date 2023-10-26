@@ -1,8 +1,9 @@
-package com.cyk.springboot3.mutil.datasources.service;
+package com.cyk.springboot3.mutil.datasources.service.impl;
 
 import com.cyk.springboot3.integrated.mysql.mybatis.xml.service.dto.UserPageDTO;
 import com.cyk.springboot3.mutil.datasources.entity.User;
-import com.cyk.springboot3.mutil.datasources.mapper.user.UserMapper;
+import com.cyk.springboot3.mutil.datasources.mapper1.UserMapper;
+import com.cyk.springboot3.mutil.datasources.service.UserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -39,7 +40,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public PageInfo<User> queryByPage(UserPageDTO userPageDTO) {
-
         PageHelper.startPage(userPageDTO.getPageNo(), userPageDTO.getPageSize());
         Page page = userMapper.queryByPage(userPageDTO);
         PageInfo<User> pageInfo = new PageInfo<>(page);

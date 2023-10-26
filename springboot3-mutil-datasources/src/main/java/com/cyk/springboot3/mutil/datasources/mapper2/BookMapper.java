@@ -1,6 +1,8 @@
-package com.cyk.springboot3.mutil.datasources.mapper.book;
+package com.cyk.springboot3.mutil.datasources.mapper2;
 
 import com.cyk.springboot3.mutil.datasources.entity.Book;
+
+import java.util.List;
 
 public interface BookMapper {
     /**
@@ -50,4 +52,6 @@ public interface BookMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Book record);
+
+    List<Book> selectAll();
 }
