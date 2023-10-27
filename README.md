@@ -76,13 +76,17 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (1, '
 
 INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '罗贯中', '三国演义', 14, '2020-12-19 15:28:36', '历史小说');
 ```
-
+- 配置 各个数据库数据源  master + slave datasource 
 
 ### 13. springboot 集成mysql - mybatis-plus 代码自动生成、基于字段隔离多租户
 ### 14. springboot 集成shardJDBC
 ### 15. springboot 集成数据库连接池 DBCP、C3P0、HikariCP (对比不同数据库连接池的区别)
 ### 16. springboot 集成数据库脚本管理工具 flyway liquibase
 ### 17. springboot 集成redis(jedis三种连接方式(单机、分片、集群)) / RedisTemplate、Jedis、lettuce、Redission 区分
+- docker 安装 redis
+```text
+    docker run -itd --name redis-test -p 6379:6379 redis
+```
 ### 18. springboot 集成分布式锁
 ### 19. springboot 集成 MongoDB
 ### 20. springboot 集成ES、kafka、rocketMQ
