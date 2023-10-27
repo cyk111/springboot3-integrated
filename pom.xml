@@ -26,8 +26,9 @@
 		<module>springboot3-mysql-mybatis-xml</module>
 		<module>springboot3-mutil-datasources</module>
 		<module>springboot3-redis-lettuce</module>
+        <module>springboot3-mongo</module>
 
-	</modules>
+    </modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
