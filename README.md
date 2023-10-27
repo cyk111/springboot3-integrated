@@ -87,7 +87,30 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '
 ```text
     docker run -itd --name redis-test -p 6379:6379 redis
 ```
+- redis 四种序列化方式
+  - JDK 序列化方式 （默认）
+  - String 序列化方式 (较长使用)
+  - JSON 序列化方式 (占用空间太大)
+  - XML 序列化方式 (很少使用)
+
+  - Spring Boot 集成 Redis 时，默认使用 JdkSerializationRedisSerializer 进行对象序列化和反序列化。但是，
+    这种序列化方式有一些问题，例如效率低下，占用内存高等。因此，通常情况下建议使用其他序列化方式。
+  - Spring Boot 提供了多种序列化方式，例如 JSON、Jackson、FastJson、Protobuf、Kryo 等。其中，
+    使用 JSON 序列化的方式是比较常见的选择，因为 JSON 格式的数据在传输和存储上都比较便捷。
+
+  - lettuce和jedis区别
+    jedis连接Redis服务器是直连模式，当多线程连接下使用jedis会存在线程安全问题，解决方案可以通过配置连接池使每个连接专用（会严重影响性能）
+    
+    lettuce 基于netty框架进行与Redis服务器连接，底层设计中采用 StatefulRedisConnection，StatefulRedisConnection自身是线程安全的，
+    可以保障并发访问安全问题，一个连接可以被多路复用。同时lettuce也支持多连接一起工作。
+    lettuce 是redis的默认客户端技术
+
+  - 添加注解方式 + 分布式锁
+    - @RedisLock
+      public void xxxMethod() {
+      }
 ### 18. springboot 集成分布式锁
+ - done 
 ### 19. springboot 集成 MongoDB
 ### 20. springboot 集成ES、kafka、rocketMQ
 ### 21. springboot 集成websocket  netty
