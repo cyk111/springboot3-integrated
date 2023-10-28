@@ -26,6 +26,9 @@
         </dependency>
 ```
 ### 4. 多版本接口提供,多环境切换(todo)
+- todo
+### 4.springboot 集成日志
+- todo 
 ### 5. springboot 集成swagger、集成 smartDoc
 
 ### 6. springboot 访问外部接口的几种方式
@@ -82,6 +85,7 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '
 ### 14. springboot 集成shardJDBC
 ### 15. springboot 集成数据库连接池 DBCP、C3P0、HikariCP (对比不同数据库连接池的区别)
 ### 16. springboot 集成数据库脚本管理工具 flyway liquibase
+- todo
 ### 17. springboot 集成redis(jedis三种连接方式(单机、分片、集群)) / RedisTemplate、Jedis、lettuce、Redission 区分
 - docker 安装 redis
 ```text
@@ -109,7 +113,7 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '
     - @RedisLock
       public void xxxMethod() {
       }
-
+-TODO
 - 搭建 redis哨兵 (使用docker-compose、多个docker自己配置)
 - 搭建 redis集群 (使用docker-compose、多个docker自己配置)
 - 分别集成 springboot集成
@@ -135,16 +139,25 @@ $ docker exec -it mongo mongo admin
 
 ```
 
-### 20. springboot 集成ES、kafka、rocketMQ
+### 20. springboot 集成ES
+- todo
+### 21. springboot 集成kafka
+- todo
+### 22. springboot 集成rocketMQ
+- todo
 ### 21. springboot 集成websocket  netty
 ### 22. springboot 集成Schedule ExecutorService
 ### 23. springboot 集成定时任务  quart、quartz cluster、elastic-job、xxl-job
 ### 24. springboot 集成文件上传下载、断点续传
+- todo
 ### 25. springboot 集成文件 POI、EasyPOI 导入导出 Excel world
+- todo 
 ### 26. springboot 集成导出PDF
+- todo 
 ### 27. springboot 异步编程 @Async  Reactive
 ### 28. springboot 应用部署(jar、war  tomcat(jetty,undertow)) 、docker、 docker compose 
 ### 29. springboot 集成监控 actuator、springboot admin、Prometheus + grafana 
+- todo 
 
 
 

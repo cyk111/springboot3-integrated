@@ -29,8 +29,22 @@
 		<module>springboot3-redis-lettuce</module>
         <module>springboot3-redis-sentinel</module>
         <module>springboot3-redis-cluster</module>
+		<module>springboot3-elasticsearch</module>
+		<module>springboot3-kafka</module>
+		<module>springboot3-mq</module>
+		<module>springboot3-log</module>
+		<module>spingboot3-flyway</module>
+		<module>springboot3-test</module>
+		<module>springboot3-dockerfile</module>
+		<module>springboot3-docker-compose</module>
+		<module>springboot3-actuator</module>
+		<module>springboot-admin</module>
+		<module>springboot3-poi</module>
+		<module>springboot3-quart</module>
+		<module>springboot-up-down-load</module>
+		<module>springboot3-connection-pool</module>
 
-    </modules>
+	</modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
