@@ -1,11 +1,14 @@
 server:
-  port: 8080
+  port: 8081
 # 配置swagger文档的访问路径，访问地址：http://127.0.0.1:8080/swagger-ui.html
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
 spring:
+  application:
+    name: springboot+mybatis
+
   devtools:
     restart:
       enabled: true  #设置开启热部署
@@ -21,6 +24,12 @@ spring:
     max-wait: 10000
     min-idle: 10
     max-active: 200
+
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
