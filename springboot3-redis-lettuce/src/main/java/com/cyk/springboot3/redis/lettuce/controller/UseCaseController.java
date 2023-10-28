@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -110,6 +111,64 @@ public class UseCaseController {
             userService.delete(userDB.getUserId());
         }
         return Result.success("删除成功");
+    }
+
+
+    //================= redis 做缓存使用  读写穿透策略
+
+    @RequestMapping(path = "/selectById",method = RequestMethod.GET)
+    public Result<User> selectById(@RequestParam Long id){
+        // 读操作，先从缓存中取，如果没有，查询DB,然后返回到cache 返回
+        User user = getUser(id);
+        return Result.success(user);
+    }
+
+
+    @RequestMapping(path = "/add",method = RequestMethod.POST)
+    public Result<User> add(@RequestBody User user){
+        // 先更新缓存 然后更新DB
+         addUser(user);
+        return Result.success(user);
+    }
+
+    private User getUser(Long id){
+        // 从缓存中获取，如果没有
+        User user = (User) redisUtil.get(RedisConstants.REDIS_KEY_PREFIX_USER + id);
+        if(Objects.nonNull(user)){
+            // 从数据库查询
+            user = userService.getUserById(id);
+            if(Objects.nonNull(user)){
+                redisUtil.set(RedisConstants.REDIS_KEY_PREFIX_USER + id,user);
+            }
+        }
+        return user;
+    }
+
+    private String addUser(User user){
+       // 先更新缓存 然后更新DB
+        redisUtil.set(RedisConstants.REDIS_KEY_PREFIX_USER + user.getUserId(),user);
+        userService.insert(user);
+        return "aaa";
+    }
+
+    //================= redis 做缓存使用  异步策略
+
+    @RequestMapping(path = "/asynAdd",method = RequestMethod.POST)
+    public Result<String> asynAdd(@RequestBody User user){
+        if(Objects.nonNull(user)){
+            user.setUserId(100001L);
+            redisUtil.set(RedisConstants.REDIS_KEY_PREFIX_USER + 100001L ,user);
+        }
+        // 异步方法
+        insertUser(user);
+        return Result.success("do....");
+    }
+
+    @Async
+    public void insertUser(User user) {
+        System.out.println("=======~~~~~~~~~~");
+        userService.insert(user);
+
     }
 
 

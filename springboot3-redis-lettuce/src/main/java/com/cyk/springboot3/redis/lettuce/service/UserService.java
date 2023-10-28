@@ -14,6 +14,8 @@ public interface UserService {
 
     int save(User user);
 
+    int insert(User user);
+
     int delete(Long userId);
 
     int update(User record);

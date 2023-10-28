@@ -39,6 +39,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
+    public int insert(User user) {
+        int i = userMapper.insert(user);
+        return i ;
+    }
+
+    @Override
     public int delete(Long userId) {
         int i = userMapper.deleteByPrimaryKey(userId);
         redisUtil.del(RedisConstants.REDIS_KEY_PREFIX_USER+userId);
