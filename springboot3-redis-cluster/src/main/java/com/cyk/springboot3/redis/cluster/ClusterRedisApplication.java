@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2023/10/28 09:14
  */
 @SpringBootApplication
-public class RedisClusterApplication {
+public class ClusterRedisApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RedisClusterApplication.class,args);
+        SpringApplication.run(ClusterRedisApplication.class,args);
     }
 }
