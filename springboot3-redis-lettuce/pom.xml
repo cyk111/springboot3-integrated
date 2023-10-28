@@ -90,6 +90,12 @@
             <optional>true</optional> <!-- 可以防止将devtools依赖传递到其他模块中 -->
         </dependency>
 
+        <!-- spring redis 实现session -->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- MyBatis Generator 的相关配置 自动生成mybatis 代码 -->
