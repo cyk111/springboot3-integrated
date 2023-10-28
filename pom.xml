@@ -25,8 +25,10 @@
 		<module>springboot3-postgresql-jpa</module>
 		<module>springboot3-mysql-mybatis-xml</module>
 		<module>springboot3-mutil-datasources</module>
+		<module>springboot3-mongo</module>
 		<module>springboot3-redis-lettuce</module>
-        <module>springboot3-mongo</module>
+        <module>springboot3-redis-sentinel</module>
+        <module>springboot3-redis-cluster</module>
 
     </modules>
     <properties>

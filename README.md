@@ -110,6 +110,10 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '
       public void xxxMethod() {
       }
 
+- 搭建 redis哨兵 (使用docker-compose、多个docker自己配置)
+- 搭建 redis集群 (使用docker-compose、多个docker自己配置)
+- 分别集成 springboot集成
+- redis 各种常用使用 排序、缓存、分布式锁、全局id、用户关注、限流 、计数器、全局session 的使用
 ### 18. springboot 集成分布式锁
  - done 
 ### 19. springboot 集成 MongoDB
