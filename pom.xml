@@ -43,8 +43,9 @@
 		<module>springboot3-quart</module>
 		<module>springboot-up-down-load</module>
 		<module>springboot3-connection-pool</module>
+        <module>springboot3-mail</module>
 
-	</modules>
+    </modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
