@@ -1,0 +1,11 @@
+logging:
+  config: classpath:logback-spring.xml
+#level:
+    #root: info  #修改日志的级别，默认root是info
+  #file:
+    #name: springboot.log # 指定日志名称
+    #path: /Users/chenyongke/Downloads/logs   #  指定目录
+    # logging.file.name, logging.file.path 不能同时生效 logging.file.name会覆盖logging.file.path
+  #pattern:
+    #console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){yellow} %clr([%thread]){red}  %highlight(%-5level) %logger{50} -%msg%n"
+    #file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){yellow} === %clr([%thread]){red} == %highlight(%-5level) == %logger{50} == %msg%n"
