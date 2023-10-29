@@ -1,0 +1,6 @@
+CREATE TABLE car (
+    id INT NOT NULL PRIMARY KEY,
+    color VARCHAR(10) NOT NULL
+);
+
+ALTER TABLE car ADD license_id VARCHAR(100);

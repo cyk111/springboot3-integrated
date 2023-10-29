@@ -74,6 +74,7 @@
 		</dependency>
 	</dependencies>
 
+	<!-- 加入 spring-boot-maven-plugin  可以生成fat.jar -->
 	<build>
 		<plugins>
 			<plugin>

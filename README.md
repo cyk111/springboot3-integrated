@@ -84,8 +84,13 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '
 ### 13. springboot 集成mysql - mybatis-plus 代码自动生成、基于字段隔离多租户
 ### 14. springboot 集成shardJDBC
 ### 15. springboot 集成数据库连接池 DBCP、C3P0、HikariCP (对比不同数据库连接池的区别)
+
 ### 16. springboot 集成数据库脚本管理工具 flyway liquibase
-- todo
+- 安装插件 需要配置数据库 后可以执行mvn 命令 
+  - mvn flyway:baseline 执行后 生成 fly_schema_history 数据库表
+  - mvn flyway:clean  删除表 
+  - mvn flyway:migrate 执行命令
+  
 ### 17. springboot 集成redis(jedis三种连接方式(单机、分片、集群)) / RedisTemplate、Jedis、lettuce、Redission 区分
 - docker 安装 redis
 ```text

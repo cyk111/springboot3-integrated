@@ -9,12 +9,83 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spingboot3-flyway</artifactId>
+    <artifactId>springboot3-flyway</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>9.22.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>9.22.2</version>
+        </dependency>
+    </dependencies>
+
+
+    <!-- 指定环境的 flyway 数据库配置方法 -->
+    <!--<profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <env>local</env>
+                <flyway.url>
+                    <![CDATA[jdbc:mysql://localhost:20080/huobi_rc_actuator?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8]]></flyway.url>
+                <flyway.driver>com.mysql.jdbc.Driver</flyway.driver>
+                <flyway.user>root</flyway.user>
+                <flyway.password>123456</flyway.password>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>-->
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.2.3</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration> <driver>com.mysql.cj.jdbc.Driver</driver>
+                    <url>jdbc:mysql://localhost:3306/springboot3_flyway?useUnicode=true</url>
+                    <user>root</user>
+                    <password>123456</password>
+                    <!--<schemas></schemas>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 
 </project>
