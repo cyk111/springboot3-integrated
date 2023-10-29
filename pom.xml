@@ -44,6 +44,7 @@
 		<module>springboot-up-down-load</module>
 		<module>springboot3-connection-pool</module>
         <module>springboot3-mail</module>
+        <module>springboot3-multi-env</module>
 
     </modules>
     <properties>

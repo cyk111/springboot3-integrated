@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: '@environment@'  #注意YAML配置文件需要加单引号，否则会报错
+
+## 打包命令 mvn clean install -Pprod 生产环境  、 mvn clean install -Pdev 开发环境
