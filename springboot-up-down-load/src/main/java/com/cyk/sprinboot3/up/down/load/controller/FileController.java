@@ -16,9 +16,11 @@ import java.util.UUID;
  * @date 2023/10/29 15:09
  */
 @RestController
+@RequestMapping(path = "/minio")
 public class FileController {
 
     // 参考 https://cloud.tencent.com/developer/article/2299468
+    // 参考 https://zhuanlan.zhihu.com/p/621396742
 
     @Value("${minio.url}")
     private String minioUrl;
@@ -44,7 +46,7 @@ public class FileController {
 
             // 使用putObject方法上传文件
             minioClient.putObject(PutObjectArgs.builder()
-                    .bucket("my-bucket") // 替换为你实际的存储桶名称
+                    .bucket("test-upload-bucket") // 替换为你实际的存储桶名称
                     .object(filename)
                     .stream(file.getInputStream(), file.getSize(), -1)
                     .contentType(file.getContentType())
@@ -68,7 +70,7 @@ public class FileController {
 
             // 获取文件流
             GetObjectResponse objectResponse = minioClient.getObject(GetObjectArgs.builder()
-                    .bucket("my-bucket") // 替换为你实际的存储桶名称
+                    .bucket("test-upload-bucket") // 替换为你实际的存储桶名称
                     .object(filename)
                     .build());
 
@@ -99,7 +101,7 @@ public class FileController {
 
             // 获取文件流
             GetObjectResponse objectResponse = minioClient.getObject(GetObjectArgs.builder()
-                    .bucket("my-bucket") // 替换为你实际的存储桶名称
+                    .bucket("test-upload-bucket") // 替换为你实际的存储桶名称
                     .object(filename)
                     .build());
 
@@ -130,7 +132,7 @@ public class FileController {
 
             // 删除文件
             minioClient.removeObject(RemoveObjectArgs.builder()
-                    .bucket("my-bucket") // 替换为你实际的存储桶名称
+                    .bucket("test-upload-bucket") // 替换为你实际的存储桶名称
                     .object(filename)
                     .build());
 

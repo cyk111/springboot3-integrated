@@ -154,7 +154,24 @@ $ docker exec -it mongo mongo admin
 ### 22. springboot 集成Schedule ExecutorService
 ### 23. springboot 集成定时任务  quart、quartz cluster、elastic-job、xxl-job
 ### 24. springboot 集成文件上传下载、断点续传
-- todo
+- 上传使用minio 组件,首先docker 安装,步骤如下
+# 步骤开始
+------
+- 查询 minio 镜像
+  - docker  search  minio
+- 下载miniO 
+  - docker pull monio/monio
+- 创建挂载文件
+  - mkdir -p /Users/chenyongke/Downloads/home/minio/config # 配置文件
+  - mkdir -p /Users/chenyongke/Downloads/home/minio/data   # 数据文件
+- 启动miniO 容器 
+  docker run --name minio -p 9000:9000 -p 9001:9001 -d --restart=always -e "MINIO_ROOT_USER=admin" -e "MINIO_ROOT_PASSWORD=admin12345" -v /Users/chenyongke/Downloads/home/minio/data:/data -v /Users/chenyongke/Downloads/home/minio/config:/root/.minio minio/minio server /data --console-address '0.0.0.0:9001'
+(
+  其中 `9000:9000` 表示将容器内的 MinIO 服务端口映射到本地的 9000 端口
+  `-e` 参数指定 MinIO 登录凭证（ACCESS\_KEY 和 SECRET\_KEY）；
+  `-v` 参数指定数据持久化的目录
+)
+----
 ### 25. springboot 集成文件 POI、EasyPOI 导入导出 Excel world
 - todo 
 ### 26. springboot 集成导出PDF

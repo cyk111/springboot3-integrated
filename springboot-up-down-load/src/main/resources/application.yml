@@ -1,6 +1,14 @@
 # MinIO连接信息
 
-mino
-  url:
-  accessKey:
-  secretkey:
+# MinIO连接信息
+minio.url: http://localhost:9000
+minio.endpoint: http://localhost:9000
+minio.accessKey: admin
+minio.secretKey: admin12345
+
+spring:
+  # 配置文件上传大小限制
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB

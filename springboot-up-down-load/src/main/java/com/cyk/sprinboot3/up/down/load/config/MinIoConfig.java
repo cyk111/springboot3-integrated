@@ -12,10 +12,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MinIoConfig {
 
-    @Value(value = "${minIo.endpoint}")
+
+    @Value("${minio.endpoint}")
     private String endpoint;
-    @Value(value = "${minIo.accessKey}")
+
+    @Value("${minio.accessKey}")
     private String accessKey;
-    @Value(value = "${minIo.secretKey}")
+
+    @Value("${minio.secretKey}")
     private String secretKey;
 }
