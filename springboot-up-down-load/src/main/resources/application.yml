@@ -17,4 +17,4 @@ spring:
   thymeleaf:
     cache: false
 #文件上传路径
-file.upload.path: /Users/chenyongke/Downloads/temp
+file.upload.path: /Users/chenyongke/Downloads/temp/

@@ -19,6 +19,8 @@ import java.util.*;
 @RequestMapping("/file")
 public class UploadController {
 
+    //TODO  分片上传,断点续传,秒传
+
     /**
      * 可以上传的文件类型
      */
@@ -32,7 +34,7 @@ public class UploadController {
 
 
     /**
-     * http://localhost:8080/upload.html (访问 static/upload.html)
+     * http://localhost:8080/file/upload.html (访问 static/upload.html)
      * @param file    上传的文件
      * @param request http请求，获取其他表单字段
      * @return
