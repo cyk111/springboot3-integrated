@@ -17,7 +17,7 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping(path = "/minio")
-public class FileController {
+public class FileMinioController {
 
     // 参考 https://cloud.tencent.com/developer/article/2299468
     // 参考 https://zhuanlan.zhihu.com/p/621396742
