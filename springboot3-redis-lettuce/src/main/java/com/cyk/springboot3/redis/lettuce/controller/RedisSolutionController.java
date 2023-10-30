@@ -22,6 +22,8 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class RedisSolutionController {
 
+    // todo  切面AOP方式实现缓存
+
 
     /**
      * 缓存穿透：客户端请求的数据在缓存和数据库都不存在，这样请求就会先访问缓存在到数据库，利用这个漏洞，一直请求缓存和数据库都不存在的数据，可能导致数据库崩溃
