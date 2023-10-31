@@ -173,14 +173,27 @@ $ docker exec -it mongo mongo admin
 )
 ----
 ### 25. springboot 集成文件 POI、EasyPOI 导入导出 Excel world
-- todo 
+-  POI 已经处理 
 ### 26. springboot 集成导出PDF
 - todo 
 ### 27. springboot 异步编程 @Async  Reactive
 ### 28. springboot 应用部署(jar、war  tomcat(jetty,undertow)) 、docker、 docker compose 
 ### 29. springboot 集成监控 actuator、springboot admin、Prometheus + grafana 
-- todo 
 
+### 30. springboot 集成 SSO 
+- docker安装cas 服务器
+- 拉取镜像
+- docker pull apereo/cas
+- 启动容器
+- docker run  --name cas -p 8443:8443 -p 8442:8080  apereo/cas /bin/sh /cas-overlay/bin/run-cas.sh
+- 报错 需要配置证书
+-  keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -validity 10000
+![img.png](img.png)
+密钥库指令是： changeit
+- 拷贝证书: docker cp debug.keystore cas:/etc/cas/thekeystore
+- 重新启动容器:  docker restart cas 
+- 查看 密钥库文件格式是否正确
+- keytool -list -keystore debug.keystore
 
 
 ### 3 springboot 配置日志
