@@ -181,7 +181,7 @@ $ docker exec -it mongo mongo admin
 ### 29. springboot 集成监控 actuator、springboot admin、Prometheus + grafana 
 
 ### 30. springboot 集成 SSO 
-- docker安装cas 服务器
+- docker安装cas 服务器  （待优化）
 - 拉取镜像
 - docker pull apereo/cas
 - 启动容器

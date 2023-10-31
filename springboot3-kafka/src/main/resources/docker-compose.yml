@@ -1,0 +1,41 @@
+version: "2"
+services:
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.8
+    ports:
+      - "2181:2181"
+    volumes:
+      - "zookeeper_data:/bitnami"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes # 匿名登录
+  kafka:
+    image: docker.io/bitnami/kafka:3.4
+    ports: #记得在防火墙开放端口
+      - "9092:9092"
+      - "9093:9093"
+    volumes:
+      - "kafka_data:/bitnami"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes # 配置监听者的安全协议
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT # 定义Kafka Broker的Listener的配置项，配置外部访问和内部访问
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://0.0.0.0:9093 # 将Broker的Listener信息发布到Zookeeper中，供Clients（Producer/Consumer）使用
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://dev.wsl.net:9093 # dev.wsl.net 换成自己的ip
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
+    depends_on:
+      - zookeeper
+  kafka_manager:
+    image: 'hlebalbau/kafka-manager:latest'
+    ports:
+      - "9009:9000"
+    environment:
+      ZK_HOSTS: "zookeeper:2181"
+      APPLICATION_SECRET: letmein
+    depends_on:
+      - zookeeper
+      - kafka
+volumes:
+  zookeeper_data:
+    driver: local
+  kafka_data:
+    driver: local
