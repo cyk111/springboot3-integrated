@@ -46,8 +46,9 @@
         <module>springboot3-mail</module>
         <module>springboot3-multi-env</module>
 		<module>springboot3-jwt</module>
+        <module>springboot3-multi-verison</module>
 
-	</modules>
+    </modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
