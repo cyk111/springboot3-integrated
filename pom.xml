@@ -40,7 +40,6 @@
 		<module>springboot3-actuator</module>
 		<module>springboot-admin</module>
 		<module>springboot3-poi</module>
-		<module>springboot3-quart</module>
 		<module>springboot-up-down-load</module>
 		<module>springboot3-connection-pool</module>
         <module>springboot3-mail</module>
@@ -48,8 +47,9 @@
 		<module>springboot3-jwt</module>
         <module>springboot3-multi-verison</module>
         <module>springboot3-quartz</module>
+		<module>springboot3-xxl-job</module>
 
-    </modules>
+	</modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
