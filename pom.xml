@@ -47,6 +47,7 @@
         <module>springboot3-multi-env</module>
 		<module>springboot3-jwt</module>
         <module>springboot3-multi-verison</module>
+        <module>springboot3-quartz</module>
 
     </modules>
     <properties>
