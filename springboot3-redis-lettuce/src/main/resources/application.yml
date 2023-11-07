@@ -26,7 +26,7 @@ spring:
 
   data:
     redis:
-      host: 127.0.0.1
+      host: 101.200.157.190
       port: 6379
       password:
       lettuce:   #jedis:  ## 切换 redis 客户端

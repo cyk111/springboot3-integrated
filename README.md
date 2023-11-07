@@ -123,6 +123,14 @@ INSERT INTO Book (id, author, name, price, createTime, description) VALUES (2, '
 - 搭建 redis集群 (使用docker-compose、多个docker自己配置)
 - 分别集成 springboot集成
 - redis 各种常用使用 排序、缓存、分布式锁、全局id、用户关注、限流 、计数器、全局session 的使用
+
+- docker 搭建 portainer (管理 docker 容器)
+docker run -d -p 9000:9000 \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+--name prtainer-test \
+docker.io/portainer/portainer
+
 ### 18. springboot 集成分布式锁
  - done 
 ### 19. springboot 集成 MongoDB

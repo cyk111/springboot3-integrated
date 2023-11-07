@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisClusterConfiguration;
 import org.springframework.data.redis.connection.RedisNode;
+import org.springframework.data.redis.connection.RedisPassword;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -19,8 +20,8 @@ import java.util.List;
 @Configuration
 public class RedisConfig {
 
-    //@Value("${spring.redis.password}")
-    //private String password;
+    @Value("${spring.data.redis.password}")
+    private String password;
 
     @Value("${spring.data.redis.cluster.nodes}")
     private List<String> nodes;
@@ -33,7 +34,7 @@ public class RedisConfig {
             String[] arr = node.split(":");
             clusterConfiguration.addClusterNode(new RedisNode(arr[0], Integer.parseInt(arr[1])));
         }
-        //clusterConfiguration.setPassword(RedisPassword.of(password));
+        clusterConfiguration.setPassword(RedisPassword.of(password));
         return new LettuceConnectionFactory(clusterConfiguration);
     }
 
