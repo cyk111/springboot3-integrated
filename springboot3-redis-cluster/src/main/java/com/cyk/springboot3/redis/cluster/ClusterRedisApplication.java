@@ -47,4 +47,13 @@ public class ClusterRedisApplication {
      * ## 查看主从信息
      *
      */
+
+    // 如果是 不是使用 docker 搭建 redis集群，这个链接可以参考
+    //https://blog.csdn.net/lingbomanbu_lyl/article/details/107999780
+
+    // ------------
+
+    // 使用 docker 搭建集群
+    //  https://blog.csdn.net/qq_53267860/article/details/129270270
+
 }
