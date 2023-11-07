@@ -25,7 +25,7 @@ public class TestController {
     @RequestMapping("/test")
     public void test(){
 
-        //stringRedisTemplate.opsForValue().set("ke1","abc");
+        stringRedisTemplate.opsForValue().set("ke1","abc");
         User u = new User();
         u.setName("cyk");
         u.setAddress("abc.df.cd");
