@@ -44,6 +44,11 @@
             <version>1.2.73</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
