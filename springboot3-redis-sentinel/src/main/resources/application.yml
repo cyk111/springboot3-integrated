@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: 101.200.157.190
+      port: 7379
+      password:
+      lettuce:
+        pool:
+          max-active: 8 #连接池最大连接数(使用负值表示没有限制)
+          max-wait: -1 #最大阻塞等待时间(使用负值表示没有限制)
+          max-idle: 8 #最大空闲连接数
+          min-idle: 0 #最小空闲连接数
+
