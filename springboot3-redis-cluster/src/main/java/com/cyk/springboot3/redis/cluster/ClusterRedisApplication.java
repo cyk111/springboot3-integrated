@@ -56,4 +56,8 @@ public class ClusterRedisApplication {
     // 使用 docker 搭建集群
     //  https://blog.csdn.net/qq_53267860/article/details/129270270
 
+
+    // 官方文档
+    // https://redis.io/docs/reference/cluster-spec/
+
 }

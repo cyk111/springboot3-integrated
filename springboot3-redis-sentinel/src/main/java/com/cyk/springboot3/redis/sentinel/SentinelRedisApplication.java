@@ -33,7 +33,17 @@ public class SentinelRedisApplication {
      *    同样也继承了主从模式难以在线扩容的缺点，Redis的容量受限于单机配置
      *    需要额外的资源来启动sentinel进程，实现相对复杂一点，同时slave节点作为备份节点不提供服务
 
-     *   参考文档： https://www.cnblogs.com/tanghaorong/p/14337982.html
+     *   参考文档：
+     *   https://www.cnblogs.com/tanghaorong/p/14337982.html
+     *   https://juejin.cn/post/7206226905309429818
+     *   全量配置信息
+     *   https://zhuanlan.zhihu.com/p/146465201
+     *   - 主要参考 哨兵搭建
+     *   https://juejin.cn/post/6844903908398071815
+     *
+     *   - docker-compose 搭建哨兵 未实践
+     *
+     *   https://www.cnblogs.com/coolxin1024/p/17182557.html
      *
      */
 
