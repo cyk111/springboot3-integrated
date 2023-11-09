@@ -47,14 +47,34 @@ redis-server /etc/redis/redis.conf
 - 执行命令
 docker exec -it redis-slave1 /bin/bash
 - 配置主从
-slaveof 172.17.0.5 7379
+slaveof 172.17.0.4 7379
 info replication
-
-
-
 
 - 主从配置
 - 从服务器执行命令
-slaveof [master-ip] [master-port]
+  slaveof [master-ip] [master-port]
+
+- redis 主从服务主从数据不同步
+  master机器，未设置密码 （requirepass 123456）
+  master机器，设置了主密码 （masterauth 123456）
+  结论：redis集群中，主服务器需要设置密码，从服务器上需要配置主服务器的密码
+  当使用统一配置文件时，应当设置密码，同时也要设置主密码，上面两个都需要设置
+
+  
 
 #### 哨兵模式搭建
+- 添加配置哨兵配置文件
+sentinel.conf
+- 哨兵容器创建
+docker run -d --name sentinel1 -p 27379:27379 -v /data/sentinel1/sentinel.conf:/usr/local/etc/redis/sentinel.conf  redis:6.0.8  
+docker run -d --name sentinel2 -p 27380:27380 -v /data/sentinel2/sentinel.conf:/usr/local/etc/redis/sentinel.conf  redis:6.0.8  
+docker run -d --name sentinel3 -p 27381:27381 -v /data/sentinel3/sentinel.conf:/usr/local/etc/redis/sentinel.conf  redis:6.0.8  
+
+- 运行哨兵
+- 进入容器
+docker exec -it sentinel1 /bin/bash
+- 创建日志目录文件
+$ mkdir /var/log/redis
+$ touch /var/log/redis/sentinel.log
+# 启动哨兵
+redis-sentinel /usr/local/etc/redis/sentinel.conf

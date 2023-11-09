@@ -2,7 +2,6 @@ package com.cyk.springboot3.redis.sentinel.config;
 
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -11,7 +10,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @author cyk
  * @date 2023/11/3 11:21
  */
-@Configuration
+//@Configuration
 public class RedisConfig {
 
 
